@@ -62,7 +62,11 @@ LEGACY_RECORD_STRUCTURE(all_waypoints, waypoint)
 		linked.relaymove(user, direction, accellimit)
 		return 1
 
-/obj/machinery/computer/ship/helm/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+/datum/nanoui/speshul/add_common_assets()
+	..()
+	add_stylesheet("speshul.css") // this CSS sheet is common to all UIs
+
+/obj/machinery/computer/ship/helm/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/speshul/ui = null, var/force_open = 1)
 	var/data[0]
 
 	if(!linked)
