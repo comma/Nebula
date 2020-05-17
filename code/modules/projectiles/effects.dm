@@ -14,6 +14,13 @@
 	if(istype(M))
 		transform = M
 
+/obj/effect/projectile/Initialize(mapload, new_color, l_color)
+	if(new_color)
+		color = new_color
+	if(l_color)
+		light_color = l_color
+	. = ..()
+
 //----------------------------
 // Laser beam
 //----------------------------
@@ -28,6 +35,21 @@
 
 /obj/effect/projectile/laser/impact
 	icon_state = "impact_laser"
+
+//----------------------------
+// Laser beam
+//----------------------------
+/obj/effect/projectile/thinlaser/
+	light_color = COLOR_RED_LIGHT
+
+/obj/effect/projectile/thinlaser/tracer
+	icon_state = "thinbeam"
+
+/obj/effect/projectile/thinlaser/muzzle
+	icon_state = "muzzle_thin"
+
+/obj/effect/projectile/thinlaser/impact
+	icon_state = "impact_thin"
 
 //----------------------------
 // Blue laser beam
@@ -97,14 +119,14 @@
 	light_color = COLOR_DEEP_SKY_BLUE
 
 /obj/effect/projectile/laser/pulse/tracer
-	icon_state = "u_laser"
+	icon_state = "pulse"
 
 
 /obj/effect/projectile/laser/pulse/muzzle
-	icon_state = "muzzle_u_laser"
+	icon_state = "muzzle_pulse"
 
 /obj/effect/projectile/laser/pulse/impact
-	icon_state = "impact_u_laser"
+	icon_state = "impact_pulse"
 
 //----------------------------
 // Pulse muzzle effect only

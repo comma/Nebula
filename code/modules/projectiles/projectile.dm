@@ -57,6 +57,8 @@
 	var/muzzle_type
 	var/tracer_type
 	var/impact_type
+	var/effects_color
+	var/effects_light_color
 
 	var/fire_sound
 	var/fire_sound_vol = 50
@@ -396,7 +398,7 @@
 		return
 
 	if(ispath(muzzle_type))
-		var/obj/effect/projectile/M = new muzzle_type(get_turf(src))
+		var/obj/effect/projectile/M = new muzzle_type(get_turf(src), effects_color, effects_light_color)
 
 		if(istype(M))
 			M.set_transform(T)
@@ -409,7 +411,7 @@
 
 /obj/item/projectile/proc/tracer_effect(var/matrix/M)
 	if(ispath(tracer_type))
-		var/obj/effect/projectile/P = new tracer_type(location.loc)
+		var/obj/effect/projectile/P = new tracer_type(location.loc, effects_color, effects_light_color)
 
 		if(istype(P))
 			P.set_transform(M)
@@ -422,7 +424,7 @@
 
 /obj/item/projectile/proc/impact_effect(var/matrix/M)
 	if(ispath(impact_type))
-		var/obj/effect/projectile/P = new impact_type(location ? location.loc : get_turf(src))
+		var/obj/effect/projectile/P = new impact_type(location ? location.loc : get_turf(src), effects_color, effects_light_color)
 
 		if(istype(P) && location)
 			P.set_transform(M)

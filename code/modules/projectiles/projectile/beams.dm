@@ -27,6 +27,16 @@
 /obj/item/projectile/beam/smalllaser
 	damage = 25
 	armor_penetration = 10
+	muzzle_type = /obj/effect/projectile/thinlaser/muzzle
+	tracer_type = /obj/effect/projectile/thinlaser/tracer
+	impact_type = /obj/effect/projectile/thinlaser/impact
+
+/obj/item/projectile/beam/smalllaser/Initialize()
+	// var/hueshift = (damage + armor_penetration - 20) * 3
+	var/hueshift = pick(0, 45, 90, 135, 180, -45, -90)
+	effects_color = color_rotation(hueshift)
+	effects_light_color = HSVtoRGB(RotateHue(RGBtoHSV(COLOR_RED_LIGHT), hueshift))
+	. = ..()
 
 /obj/item/projectile/beam/midlaser
 	damage = 50
