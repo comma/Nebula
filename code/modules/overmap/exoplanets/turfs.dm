@@ -131,6 +131,8 @@
 	SetName("permafrost")
 	icon_state = "permafrost"
 	footstep_type = /decl/footsteps/asteroid
+	remove_decals()
+	update_icon()
 
 //Grass
 /turf/simulated/floor/exoplanet/grass
@@ -164,6 +166,8 @@
 	icon_state = "scorched"
 	footstep_type = /decl/footsteps/asteroid
 	color = null
+	remove_decals()
+	update_icon()
 
 //Sand
 /turf/simulated/floor/exoplanet/desert
@@ -185,6 +189,7 @@
 	desc = "A glassed patch of sand."
 	icon_state = "sandglass"
 	diggable = 0
+	remove_decals()
 
 //Concrete
 /turf/simulated/floor/exoplanet/concrete

@@ -83,3 +83,19 @@
 		var/mob/living/silicon/robot/R = AM
 		if(istype(R.module_active,/obj/item/pickaxe))
 			attackby(R.module_active,R)
+
+/obj/structure/meteorite
+	name = "meteorite"
+	desc = "A chunk of celestial matter that survived the fall from the stars."
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "meteor"
+	anchored = 1
+	density = 1
+	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_DESC
+
+/obj/structure/meteorite/Initialize(var/ml, var/_mat, var/coloration)
+	_mat = pick(MAT_TITANIUM, MAT_IRON, MAT_SILVER, MAT_GOLD, MAT_DIAMOND, MAT_OSMIUM, MAT_ROCK_SALT)
+	. = ..()
+	explosion(get_turf(src), 1, 1, 2)
+	for(var/turf/simulated/floor/exoplanet/T in circlerange(src, 2))
+		T.melt()
