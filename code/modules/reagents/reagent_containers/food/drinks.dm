@@ -12,15 +12,12 @@
 	volume = 50
 
 	var/filling_states   // List of percentages full that have icons
-	var/base_name = null // Name to put in front of drinks, i.e. "[base_name] of [contents]"
 	var/base_icon = null // Base icon name for fill states
 
 /obj/item/chems/food/drinks/Initialize()
 	. = ..()
-	base_name = name
-
-/obj/item/chems/food/drinks/get_base_name()
-	. = base_name
+	if(!base_name)
+		base_name = name
 
 /obj/item/chems/food/drinks/dragged_onto(var/mob/user)
 	attack_self(user)
