@@ -29,8 +29,8 @@ General Public License version 3.
 
 
 <h3 id="modules">Modules
-<aside>(150 modules,
-    48/4180 macros, 1.1%)</aside></h3>
+<aside>(152 modules,
+    48/4192 macros, 1.1%)</aside></h3>
 <ul class="index-tree modules">
     <li><a href="(builtins).html" title="(builtins)">(builtins)</a></li>
     <li class="has-children"><span title="code">code</span><ul class="index-tree">
@@ -52,6 +52,7 @@ General Public License version 3.
     <li><a href="code/_helpers/global_lists.html" title="code&#x2F;_helpers&#x2F;global_lists">global_lists</a></li>
     <li><a href="code/_helpers/icons.html" title="code&#x2F;_helpers&#x2F;icons">icons</a></li>
     <li><a href="code/_helpers/lists.html" title="code&#x2F;_helpers&#x2F;lists">lists</a></li>
+    <li><a href="code/_helpers/matrices.html" title="code&#x2F;_helpers&#x2F;matrices">matrices</a></li>
     <li><a href="code/_helpers/text.html" title="code&#x2F;_helpers&#x2F;text">text</a></li>
     <li><a href="code/_helpers/time.html" title="code&#x2F;_helpers&#x2F;time">time</a></li>
     <li><a href="code/_helpers/unsorted.html" title="code&#x2F;_helpers&#x2F;unsorted">unsorted</a></li>
@@ -179,7 +180,10 @@ General Public License version 3.
     <li><a href="code/modules/keybindings.html" title="code&#x2F;modules&#x2F;keybindings">In-code keypress handling system</a> - This whole system is heavily based off of forum_account's keyboard library.
 Thanks to forum_account for saving the day, the library can be found
 <a href="https://secure.byond.com/developer/Forum_account/Keyboard">here</a>!</li>
-    <li><span class="no-substance">maps&#x2F;</span><a href="code/modules/maps/reader.html" title="code&#x2F;modules&#x2F;maps&#x2F;reader">reader</a></li>
+    <li class="has-children"><span title="code&#x2F;modules&#x2F;maps">maps</span><ul class="index-tree">
+    <li><a href="code/modules/maps/helper_landmarks.html" title="code&#x2F;modules&#x2F;maps&#x2F;helper_landmarks">helper_landmarks</a></li>
+    <li><a href="code/modules/maps/reader.html" title="code&#x2F;modules&#x2F;maps&#x2F;reader">reader</a></li>
+    </ul></li>
     <li><span class="no-substance">materials&#x2F;</span><a href="code/modules/materials/material_sheets.html" title="code&#x2F;modules&#x2F;materials&#x2F;material_sheets">material_sheets</a></li>
     <li class="has-children"><span title="code&#x2F;modules&#x2F;mining">mining</span><ul class="index-tree">
     <li><a href="code/modules/mining/mine_items.html" title="code&#x2F;modules&#x2F;mining&#x2F;mine_items">mine_items</a></li>
@@ -270,7 +274,7 @@ Thanks to forum_account for saving the day, the library can be found
 
 
 <h3 id="types">Types
-<aside>(133 detailed/321 documented/17987 total, 1.8%)</aside></h3>
+<aside>(134 detailed/324 documented/18020 total, 1.8%)</aside></h3>
 <ul class="index-tree">
     <li><a href="global.html" title="(global)">(global)</a></li>
     <li><a href="area.html" title="&#x2F;area">area</a></li>
@@ -333,6 +337,7 @@ Thanks to forum_account for saving the day, the library can be found
     <li><a href="datum/controller/subsystem/zcopy.html" title="&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;zcopy">zcopy</a></li>
     </ul></li>
     </ul></li>
+    <li><span class="no-substance" title="&#x2F;datum&#x2F;decompose_matrix">decompose_matrix</span> - Datum which stores information about a matrix decomposed with decompose().</li>
     <li><span class="no-substance">dna&#x2F;</span><a href="datum/dna/gene.html" title="&#x2F;datum&#x2F;dna&#x2F;gene">gene</a> - Gene Datum</li>
     <li class="has-children"><span class="no-substance">effect&#x2F;effect&#x2F;system&#x2F;</span><span class="no-substance" title="&#x2F;datum&#x2F;effect&#x2F;effect&#x2F;system&#x2F;trail">trail</span> - ///// Attach an Ion trail to any object, that spawns when it moves (like for the jetpack)
 just pass in the object to attach it to in set_up
@@ -506,6 +511,7 @@ Parameters: var/datum/submap/submap, var/datum/job/job, var/mob/living/character
 Called in card.dm when someone's card is terminated at the HoP's desk.
 Parameters: var/obj/item/card/id</li>
     </ul></li>
+    <li><a href="matrix.html" title="&#x2F;matrix">matrix</a></li>
     <li class="has-children"><a href="mob.html" title="&#x2F;mob">mob</a><ul class="index-tree">
     <li class="has-children"><a href="mob/living.html" title="&#x2F;mob&#x2F;living">living</a><ul class="index-tree">
     <li class="has-children"><a href="mob/living/carbon.html" title="&#x2F;mob&#x2F;living&#x2F;carbon">carbon</a><ul class="index-tree">
@@ -530,7 +536,10 @@ Parameters: var/obj/item/card/id</li>
     <li><a href="mob/new_player.html" title="&#x2F;mob&#x2F;new_player">new_player</a></li>
     </ul></li>
     <li class="has-children"><a href="obj.html" title="&#x2F;obj">obj</a><ul class="index-tree">
-    <li><span class="no-substance">abstract&#x2F;</span><a href="obj/abstract/map_data.html" title="&#x2F;obj&#x2F;abstract&#x2F;map_data">map_data</a></li>
+    <li class="has-children"><span title="&#x2F;obj&#x2F;abstract">abstract</span><ul class="index-tree">
+    <li><span class="no-substance">landmark&#x2F;</span><span class="no-substance" title="&#x2F;obj&#x2F;abstract&#x2F;landmark&#x2F;allowed_leak">allowed_leak</span> - Used to tell pipe leak unit tests that a leak is intentional. Placed over the pipe that leaks, not the tile missing a pipe.</li>
+    <li><a href="obj/abstract/map_data.html" title="&#x2F;obj&#x2F;abstract&#x2F;map_data">map_data</a></li>
+    </ul></li>
     <li><a href="obj/compass_holder.html" title="&#x2F;obj&#x2F;compass_holder">compass_holder</a></li>
     <li class="has-children"><span title="&#x2F;obj&#x2F;effect">effect</span><ul class="index-tree">
     <li><span class="no-substance">decal&#x2F;cleanable&#x2F;blood&#x2F;</span><a href="obj/effect/decal/cleanable/blood/tracks.html" title="&#x2F;obj&#x2F;effect&#x2F;decal&#x2F;cleanable&#x2F;blood&#x2F;tracks">tracks</a></li>
@@ -755,7 +764,7 @@ As with material, these stacks should only set this in Initialize as they are ab
 </main>
 <footer>
     nebula.dme
-    <a href="https://github.com/comma/Nebula/tree/24177531bf0d176065aa4533f9ed12a81ed837ae">2417753</a>
+    <a href="https://github.com/comma/Nebula/tree/669ea155d965d4e2649949e8563fd39da04624e5">669ea15</a>
         (dev) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
 </body>
 </html>
