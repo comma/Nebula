@@ -96,7 +96,7 @@
 	level_data_type            = /datum/level_data/planetoid/exoplanet/volcanic
 	prefered_level_data_per_z  = list(
 		/datum/level_data/planetoid/exoplanet/volcanic,
-		/datum/level_data/planetoid/exoplanet/underground
+		/datum/level_data/planetoid/exoplanet/mantle
 	)
 	possible_themes = list(
 		/datum/exoplanet_theme/mountains = 100,

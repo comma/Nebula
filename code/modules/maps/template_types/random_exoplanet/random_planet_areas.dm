@@ -23,6 +23,17 @@
 
 ///Spoopy undergrounds
 /area/exoplanet/underground
+	name = "\improper Planetary caverns"
+	ambience = list(
+		'sound/ambience/ominous1.ogg',
+		'sound/ambience/ominous2.ogg',
+		'sound/ambience/ominous3.ogg',
+	)
+	area_flags = AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP | AREA_FLAG_ION_SHIELDED | AREA_FLAG_RAD_SHIELDED
+	is_outside = OUTSIDE_NO
+	base_turf = /turf/exterior/rock
+
+/area/exoplanet/mantle
 	name = "\improper Planetary mantle"
 	ambience = list(
 		'sound/ambience/ominous1.ogg',

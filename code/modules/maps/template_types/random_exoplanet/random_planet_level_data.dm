@@ -24,6 +24,14 @@
 	base_area = /area/exoplanet/underground
 	base_turf = /turf/floor/natural/rock
 	level_generators = list(
+		/datum/random_map/noise/exoplanet/cave_layer,
+		/datum/random_map/automata/cave_system/planet_cave
+	)
+
+/datum/level_data/planetoid/exoplanet/mantle
+	base_area = /area/exoplanet/mantle
+	base_turf = /turf/exterior/rock/volcanic
+	level_generators = list(
 		/datum/random_map/noise/exoplanet/mantle,
 		/datum/random_map/automata/cave_system/mantle,
 	)
