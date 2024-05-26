@@ -160,9 +160,6 @@ SUBSYSTEM_DEF(materials)
 	if(istype(owner))
 		return owner.get_rock_color()
 
-	if(istype(location.owner))
-		return location.owner.get_rock_color(location)
-
 // There is a disconnect between legacy damage and armor code. This here helps bridge the gap.
 // This could eventually be removed if we used decls for damage types.
 /datum/controller/subsystem/materials/proc/get_armor_key(damage_type, damage_flags)

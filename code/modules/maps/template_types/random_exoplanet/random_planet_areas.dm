@@ -31,7 +31,7 @@
 	)
 	area_flags = AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP | AREA_FLAG_ION_SHIELDED | AREA_FLAG_RAD_SHIELDED
 	is_outside = OUTSIDE_NO
-	base_turf = /turf/exterior/rock
+	base_turf = /turf/floor/natural/rock
 
 /area/exoplanet/mantle
 	name = "\improper Planetary mantle"

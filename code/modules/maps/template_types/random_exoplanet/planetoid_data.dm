@@ -220,7 +220,7 @@
 	return flora?.grass_color
 
 ///Returns the color of rock walls on this planet, or null.
-/datum/planetoid_data/proc/get_rock_color(var/turf/exterior/wall/location)
+/datum/planetoid_data/proc/get_rock_color(var/turf/wall/natural/location)
 	if(location)
 		var/datum/level_data/LD = SSmapping.levels_by_id[surface_level_id]
 		// Don't color non surface rocks

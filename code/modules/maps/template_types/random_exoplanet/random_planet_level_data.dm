@@ -30,7 +30,7 @@
 
 /datum/level_data/planetoid/exoplanet/mantle
 	base_area = /area/exoplanet/mantle
-	base_turf = /turf/exterior/rock/volcanic
+	base_turf = /turf/floor/natural/rock/volcanic
 	level_generators = list(
 		/datum/random_map/noise/exoplanet/mantle,
 		/datum/random_map/automata/cave_system/mantle,

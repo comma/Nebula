@@ -173,7 +173,7 @@
 /datum/random_map/noise/exoplanet/cave_layer
 	descriptor           = "planetary cavern"
 	smoothing_iterations = 3
-	land_type            = /turf/exterior/rock
+	land_type            = /turf/floor/natural/rock
 	fauna_prob           = 1
 	megafauna_spawn_prob = 0
 	flora_prob           = 4
@@ -183,7 +183,7 @@
 /datum/random_map/noise/exoplanet/cave_layer/get_appropriate_path(var/value)
 	var/parsed_value = noise2value(value)
 	if(parsed_value >= 7 && parsed_value <= 9)
-		return /turf/exterior/mud/dark
+		return /turf/floor/natural/mud
 	. = ..()
 
 /datum/random_map/noise/exoplanet/get_additional_spawns(var/value, var/turf/T)
@@ -193,7 +193,7 @@
 
 /datum/random_map/automata/cave_system/planet_cave
 	descriptor       = "planetary carvern walls"
-	target_turf_type = /turf/exterior/rock
+	target_turf_type = /turf/floor/natural/rock
 	floor_type       = null
-	wall_type        = /turf/exterior/wall
+	wall_type        = /turf/wall/natural
 #undef TRANSLATE_COORD
